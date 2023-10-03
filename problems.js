@@ -1,0 +1,28 @@
+const mathProblems = [
+  { problem: "5 + 3 = ", answer: 8 },
+  { problem: "10 - 2 = ", answer: 8 },
+  { problem: "2 x 3 = ", answer: 6 },
+  { problem: "12 / 3 = ", answer: 4 },
+  { problem: "7 - 3 = ", answer: 4 },
+  { problem: "9 + 7 = ", answer: 16 },
+  { problem: "8 x 2 = ", answer: 16 },
+  { problem: "14 - 6 = ", answer: 8 },
+  { problem: "15 / 5 = ", answer: 3 },
+  { problem: "6 + 4 = ", answer: 10 },
+  { problem: "18 - 9 = ", answer: 9 },
+  { problem: "3 x 5 = ", answer: 15 },
+  { problem: "20 / 4 = ", answer: 5 },
+  { problem: "11 + 4 = ", answer: 15 },
+  { problem: "13 - 5 = ", answer: 8 },
+  { problem: "4 x 3 = ", answer: 12 },
+  { problem: "16 / 2 = ", answer: 8 },
+  { problem: "15 + 5 = ", answer: 20 },
+  { problem: "14 - 7 = ", answer: 7 },
+  { problem: "5 x 4 = ", answer: 20 },
+  { problem: "21 / 3 = ", answer: 7 },
+  { problem: "17 + 3 = ", answer: 20 },
+  { problem: "19 - 11 = ", answer: 8 },
+  { problem: "2 x 9 = ", answer: 18 },
+  { problem: "24 / 6 = ", answer: 4 }
+    // ... other problems ...
+  ];

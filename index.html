@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stylish">
+    <title>Jungle Escape Challenge</title>
+	
+	    <link rel="stylesheet" href="styles-canvas.css">
+</head>
+<body>
+
+<div id="game-container"></div>
+   
+<canvas id="myCanvas" width="1256" height="704"></canvas> 
+<canvas id="inventoryCanvas" width="1256" height="704"></canvas> 
+</div>
+
+<!-- Investigative Dialogue Window-->
+<div class="popupcontainer" id="popup">
+    <div class="grid-container">
+        <div class="box"><p id="dynamicText1" class="dynamic"></p></div>
+        <div class="stretch"><p id="dynamicText2" class="dynamic"></p></div>
+        <div class="full-width"><h2><button type="button" class="btn" onclick="closepopup()">EXIT</button></h2></div>
+    </div>
+</div>
+
+<!-- Inventory and Challenge WIndow-->
+<div class="popupcontainer-quiz" id="itemquizpopup">
+    <div class="grid-container-quiz">
+        <div class="box"><p id="itemquizpopupphoto" class="dynamic"></p></div>
+        <div class="stretch"><p id="itemquizpopuptext1" class="dynamic"></p></div>
+        <div class="stretch2"><p id="itemquizpopuptext2" class="dynamic"></p><input type="text" id="answerInput" placeholder=""></div>
+        <div class="full-width2"><button type="button" class="btn" onclick="checkanswer()">CHECK ANSWER</button><p></p></p><button type="button" class="btn" onclick="closequizpopup()">EXIT</button></div>
+    </div>
+</div>
+
+
+<script src="problems.js"></script>
+<script src="inventory.js"></script>
+<script src="coords.js"></script>
+<script src="polygons.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>
