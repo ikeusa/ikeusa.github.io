@@ -10,10 +10,8 @@ window.onload = function() {
     let inventoryItems = [];
     let selectedPolygon = null; //makes local variable global
     let inventorystatus = null; //makes local variable global
-    let binocularsIndex = null;
-    let mapsIndex = null;
     let currentDragRegions = dragregions;
-    let dragregionsimage = null;
+    let imageCache = {};
 
 
     function drawInventory() {
@@ -31,32 +29,46 @@ window.onload = function() {
         });
     }
 
-    const img = new Image();
+    img = new Image();
     img.src = currentImage ? currentImage.src : 'images/original_title_screen.jpg'; // This should be the source of your initial image
     img.onload = function() {
         ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
     };
 
+    preloadImages(); //Calls for preloads of next images for a given background
+
     function changeImage(src) {
         newImageObject = images.find(image => image.src === src);
-        
+       
         if (!newImageObject) {
             console.error(`Image with src ${src} not found`);
             return;
         } 
     
         currentImage = newImageObject; // Update the current image object
-        img.src = currentImage.src; // Set new image source
-        currentPolygons = currentImage.polygons; // Load polygons of the new image
-        updateDragRegions(currentImage.src);
+        //img.src = currentImage.src; // Set new image source
+        img = imageCache[currentImage.src]; // Set new image from preloaded source
 
+        if (!img) {
+            console.error(`Image with src ${src} not found in cache`); //Check the preloaded images
+            return;
+        }
+
+
+        currentPolygons = currentImage.polygons; // Load polygons of the new image
+        updateDragRegions(currentImage.src); //Updates drag regions for a photo
         
         // Clear and Draw new Image
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        img.onload = function() {
+        if (img.complete) {
+            // If the image is already pre-loaded, draw it immediately
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
-        };
-
+        } else {
+            // Otherwise, set up the onload event handler to draw it when it loads
+            img.onload = function() {
+                ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            };
+        }
     }
     
 
@@ -297,9 +309,30 @@ inventoryCanvas.addEventListener('mouseup', function (e) {
     }
 });
 
-function updateDragRegions(src) {
+function updateDragRegions(src) { 
     const regionSet = dragregions.find(region => region.src === src);
     currentDragRegions = regionSet ? regionSet.polygons : [];
 }
+
+function preloadImages() {
+    images.forEach(imageObject => {
+        const img = new Image();
+        img.src = imageObject.src;
+        imageCache[imageObject.src] = img;
+
+        if (imageObject.polygons) {
+            imageObject.polygons.forEach(polygon => {
+                if (polygon.replacementImage) {
+                    const replacementImg = new Image();
+                    replacementImg.src = polygon.replacementImage;
+                    imageCache[polygon.replacementImage] = replacementImg;
+                }
+            });
+        }
+    });
+    console.log('preloadImages complete:', imageCache);
+}
+
+
 
 };
