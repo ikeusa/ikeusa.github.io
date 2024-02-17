@@ -1,0 +1,17 @@
+[
+  {
+    "id": "001",
+    "name": "Spooky Forest",
+    "image": "spooky-forest-thumbnail.jpg",
+    "description": "A spine-chilling scenery for your Halloween night.",
+    "downloadLink": "videos/spooky-forest.mp4"
+  },
+  {
+    "id": "002",
+    "name": "Ghoulish Ghosts",
+    "image": "ghoulish-ghosts-thumbnail.jpg",
+    "description": "Floaty ghosts to enhance the creepy atmosphere.",
+    "downloadLink": "videos/ghoulish-ghosts.mp4"
+  }
+ 
+]

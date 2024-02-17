@@ -3,44 +3,58 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Stylish">
-    <title>Jungle Escape Challenge</title>
-	
-	    <link rel="stylesheet" href="styles-canvas.css">
+    <title>Vid-Hero: Free Halloween Video Projector Videos</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
 </head>
 <body>
-
-<div id="game-container"></div>
-   
-<canvas id="myCanvas" width="1256" height="704"></canvas> 
-<canvas id="inventoryCanvas" width="1256" height="704"></canvas> 
-</div>
-
-<!-- Investigative Dialogue Window-->
-<div class="popupcontainer" id="popup">
-    <div class="grid-container">
-        <div class="box"><p id="dynamicText1" class="dynamic"></p></div>
-        <div class="stretch"><p id="dynamicText2" class="dynamic"></p></div>
-        <div class="full-width"><h2><button type="button" class="btn" onclick="closepopup()">EXIT</button></h2></div>
+    <div class="top-bar">
+        <div class="container">
+            <nav class="top-navigation">
+                <!-- Top navigation links -->
+                <a href="index.html">Home</a>
+                <a href="premium.html">Premium Videos</a>
+                <a href="free.html">Free Videos</a>
+                <a href="about.html">About</a>
+                <a href="contact.html">Contact</a>
+                <a href="#">Login</a>
+                <a href="#">Register</a>
+                <a href="#">Cart (0)</a>
+            </nav>
+        </div>
     </div>
-</div>
+    <header>
+        <div class="container">
+            <h1>Vid-Hero</h1>
+            <p>Free Halloween Video Projector Videos</p>
+        </div>
+    </header>
 
-<!-- Inventory and Challenge WIndow-->
-<div class="popupcontainer-quiz" id="itemquizpopup">
-    <div class="grid-container-quiz">
-        <div class="box"><p id="itemquizpopupphoto" class="dynamic"></p></div>
-        <div class="stretch"><p id="itemquizpopuptext1" class="dynamic"></p></div>
-        <div class="stretch2"><p id="itemquizpopuptext2" class="dynamic"></p><input type="text" id="answerInput" placeholder=""></div>
-        <div class="full-width2"><button type="button" class="btn" onclick="checkanswer()">CHECK ANSWER</button><p></p></p><button type="button" class="btn" onclick="closequizpopup()">EXIT</button></div>
-    </div>
-</div>
+    <section id="featured-videos">
+        <h2>Featured Videos</h2>
+        <!-- Sample video entries -->
+        <div class="video">
+            <img src="path-to-video-thumbnail.jpg" alt="Video Title">
+            <h3>Video Title 1</h3>
+            <p>Description of the video.</p>
+        </div>
+        <!-- Repeat for other videos -->
+    </section>
 
+    <section id="premium-videos">
+        <h2>Premium Videos</h2>
+        <!-- Premium video entries -->
+        <!-- Repeat similar to the featured videos section -->
+    </section>
 
-<script src="problems.js"></script>
-<script src="inventory.js"></script>
-<script src="coords.js"></script>
-<script src="polygons.js"></script>
-<script src="script.js"></script>
+    <section id="free-videos">
+        <h2>Free Videos</h2>
+        <!-- Free video entries -->
+        <!-- Repeat similar to the featured videos section -->
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Halloween Projector Videos</p>
+    </footer>
 
 </body>
 </html>
